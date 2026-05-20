@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
-import { IBM_Plex_Sans, Inter } from "next/font/google";
 import "./globals.css";
-
+import { IBM_Plex_Sans } from "next/font/google";
 const ibmPlexSans = IBM_Plex_Sans({
   display: "swap",
   subsets: ["latin"],
@@ -9,15 +8,9 @@ const ibmPlexSans = IBM_Plex_Sans({
   variable: "--font-ibmplexsans",
 });
 
-const inter = Inter({
-  display: "swap",
-  subsets: ["latin"],
-  variable: "--font-inter",
-});
-
 export const metadata: Metadata = {
   title: "Coffee Corner",
-  description: "Coffee Corner App",
+  description: "Discover Your Local Coffee Shops",
 };
 
 export default function RootLayout({
@@ -26,7 +19,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${ibmPlexSans.variable}`}>
+    <html lang="en" className={ibmPlexSans.className}>
       <body>{children}</body>
     </html>
   );
